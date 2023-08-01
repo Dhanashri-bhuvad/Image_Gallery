@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image_gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="style2.css"> -->
+    <link rel="stylesheet" href="lightbox.min.css">
+    <script src="lightbox-plus-jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="gallery">
+            <h1>Image Gallery</h1>
+            <div class="image-container">
+             <a href="./images/img1.jpg"data-lightbox="mygallery"><img src="./images/img1.jpg" alt=""></a>
+             <a href="./images/img2.jpg"data-lightbox="mygallery"><img src="./images/img3.jpg" alt=""></a>
+             <a href="./images/img3.jpg"data-lightbox="mygallery"><img src="./images/img2.jpg" alt=""></a>
+             <a href="./images/img4.jpg"data-lightbox="mygallery"><img src="./images/img4.jpg" alt=""></a>
+             <a href="./images/img5.jpg"data-lightbox="mygallery"><img src="./images/img5.jpg" alt=""></a>
+             <a href="./images/img6.jpg"data-lightbox="mygallery"><img src="./images/img6.jpg" alt=""></a>
+             <a href="./images/img7.jpg"data-lightbox="mygallery"><img src="./images/img7.jpg" alt=""></a>
+             <a href="./images/img8.jpg"data-lightbox="mygallery"><img src="./images/img8.jpg" alt=""></a>
+             <a href="./images/img9.jpg"data-lightbox="mygallery"><img src="./images/img9.jpg" alt=""></a>
+             <a href="./images/img10.jpg"data-lightbox="mygallery"><img src="./images/img10.jpg" alt=""></a>
+             <a href="./images/img11.jpg"data-lightbox="mygallery"><img src="./images/img11.jpg" alt=""></a>
+             <a href="./images/img12.jpg"data-lightbox="mygallery"><img src="./images/img12.jpg" alt=""></a>
+             <a href="./images/img13.jpg"data-lightbox="mygallery"><img src="./images/img13.jpg" alt=""></a>
+             <a href="./images/img14.jpg"data-lightbox="mygallery"><img src="images/img14.jpg" alt=""></a>
+             <a href="./images/img15.jpg"data-lightbox="mygallery"><img src="images/img15.jpg" alt=""></a>
+             </div>
+        </div>
+    </div>
+    <script>
+
+        let searchBox = document.querySelector('#search-box');
+        let images = document.querySelectorAll('.container .image-container .image');
+        
+        searchBox.oninput = () =>{
+           images.forEach(hide => hide.style.display = 'none');
+           let value = searchBox.value;
+           images.forEach(filter =>{
+              let title = filter.getAttribute('data-title');
+              if(value == title){
+                 filter.style.display = 'block';
+              }
+              if(searchBox.value == ''){
+                 filter.style.display = 'block';
+              }
+           });
+        };
+        
+        </script>
+
+
+</body>
+</html>
